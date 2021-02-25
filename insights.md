@@ -247,5 +247,42 @@ key should be given
 Button component--->Button.js  [button element not Buttton Component]----->Button.css
 
 ---------------------------------------------------------------------------
+React ICONS
+npm -i react-icons
+
+"icon is a componnet"
+
+import { FaTimes } from "react-icons/fa";   <!-- FontAwsome -->
+
+------STYLING DIFFERENCE-----------------------------------------------------------
+
+1.Normal External CSS
+.FaTimes{
+color:red;
+cursor:pointer;
+position:absolute;
+right:20px;
+}
+
+2.Inline CSS in JSX
+<FaTimes style={{color:"red",cursor:"pointer",position:"absolute",right:"20px"}}/>
+
+3.CSS Script IN JSX
+<h2 style={Heading2Style}>{props.prop}</h2>
+const Heading2Style={
+    color:"red",
+    backgroundColor:"black"
+}
+---------------------------------------------------------------------------------------
+Delete Working
+1.App.js has tasks Array(BISON) with State (UseState)
+2.SetTask is function to change tasks array
+3. A function called deleteTask will use the id to change tasks using SetTask
+4. This function is passed to a single task  as prop(App.js--->Tasks.js--->Single_Task.js) Along with each task
+5.that single_task will call deleteTask by passing task.id whcih is also passed parrellely
+6.This code executed in App.js 
+7.DeleteTask has a filter function which remove task with particular id
+
+
 
 

@@ -29,10 +29,21 @@ function App() {
     virgin:"NO"
     }
 ])
+const deleteTask = (id)=>{
+  setTasks(tasks.filter((tasks)=>tasks.id!==id))  /* setTasks is the method declared in State of tasks */
+}
+
   return (
     <div className="container">
       <Header prop="TaskManager"/> <br/>  
-     <Tasks  tasks={tasks}/>  {/* passing tasks (BSON OBJECT) as prop to Task.js component */}
+      {/* if else in JSX */}
+
+      {tasks.legth>0?  /* if part */
+       <Tasks  tasks={tasks} onDelete={deleteTask}/>   
+       :"No Tasks To Show"}  {/* else part */}
+     
+    {/* passing tasks (BSON OBJECT) as prop to Task.js component */}
+    {/* onDelete is not a keyword it is just a prop (carries a function) name just like tasks.The function is carried all the way down to individual task*/}
     </div>
   );
 }
