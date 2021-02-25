@@ -59,15 +59,14 @@ export default Tasks */
 But for Now Task is given in App.js so every components can use it
 Like pass along with "props" to Task.js Components
 */
-
+import "./Task.css";
 import Single_Task from "./Single_Task"
 const Tasks = ({tasks}) => {
     return (
-        <>
-        {tasks.map((task)=> (    <Single_Task single_task = {task}/>     ))}
-
+        <div className="Tasks">
+        {tasks.map((task)=> (    <Single_Task single_task = {task}/>))}
         {/* <h2 key={task.id}>{task.text}</h2> */}
-        </>
+        </div>
     )
 }
 export default Tasks 

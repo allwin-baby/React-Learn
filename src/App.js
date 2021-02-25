@@ -31,7 +31,7 @@ function App() {
 ])
   return (
     <div className="container">
-      <Header prop="this is a prop coming from app.js to header.js where header component is importrd to app.js "/> <br/>  
+      <Header prop="TaskManager"/> <br/>  
      <Tasks  tasks={tasks}/>  {/* passing tasks (BSON OBJECT) as prop to Task.js component */}
     </div>
   );
