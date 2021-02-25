@@ -51,7 +51,7 @@ const Tasks = () => {
 export default Tasks
 */
 -----------------------------------------------------
-Props
+Props  !!!!METHOD 1!!!!
 custom container functions are imported to other containers.While calling child container from parent container we can pass arguments called Props  
 >>App.js
 import Header from "./components/Header"  //importing Header component from Header.js
@@ -85,6 +85,24 @@ Header.propTypes={
 }
 export default Header
 --------------------------------------------------------------------------
+//Prop destructring   !!!!!!!METHOD 2!!!!!
+import PropTypes from "prop-types"
+const Button=({color,text})=>{
+    return(
+        <button style={{
+            backgroundColor: "yellow",
+            border: "none",
+            color: color,
+        }}>{text}</button>
+    )
+}
+Button.defaultProps={
+    color:"green",
+    text:"CLICK ME!"
+
+}
+export default Button
+--------------------------------------------------------------
 //Styling
 
 <!-- The hierarchy is following order 
@@ -108,9 +126,8 @@ Header.js ------Button is called
 
 But.......All the containers are finally comes in index.html under root div element 
 So index.css applicable to all js files(Button.js,Header.js)!!!!!!! -->
-
+---------------------------------------------------------------------------
 import PropTypes from 'prop-types'
-
 const Header = (props) => {
     return (
         <header>
@@ -134,24 +151,7 @@ const Heading2Style={ ----->Styling
 }
 export default Header
 -----------------------------------------------------------------------
-//Prop destructring
-import PropTypes from "prop-types"
-const Button=({color,text})=>{
-    return(
-        <button style={{
-            backgroundColor: "yellow",
-            border: "none",
-            color: color,
-        }}>{text}</button>
-    )
-}
-Button.defaultProps={
-    color:"green",
-    text:"CLICK ME!"
 
-}
-export default Button
---------------------------------------------------------------
 CSS VS REACT STYLING ( INSIDE FUNCTION CONTAINER)
 const Button=({color,text})=>{
     return(
@@ -238,3 +238,6 @@ const [tasks,setTasks] = useState([{data1},{data2}])-
 1."tasks" is the "name of state" and  "setTasks"
 2.is the "function to update the state" so we can't use tasks.push()
 3. Array is the default state
+
+key should be given
+<h2 key={task.id}>{task.text}</h2>))}

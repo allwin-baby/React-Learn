@@ -27,7 +27,7 @@ const Tasks = () => {
 }
 export default Tasks */
 /*2.Tasks Array as "ComponentState" */
-import {useState} from 'react'
+/* import {useState} from 'react'
 const Tasks = () => {
     const [tasks,setTasks] = useState    ([
         {
@@ -50,6 +50,23 @@ const Tasks = () => {
         <>
         {tasks.map((task)=> (
         <h2 key={task.id}>{task.text}</h2>))}
+        </>
+    )
+}
+export default Tasks */
+
+/* To access Task globally to all components we can use Redux,etc....
+But for Now Task is given in App.js so every components can use it
+Like pass along with "props" to Task.js Components
+*/
+
+import Single_Task from "./Single_Task"
+const Tasks = ({tasks}) => {
+    return (
+        <>
+        {tasks.map((task)=> (    <Single_Task single_task = {task}/>     ))}
+
+        {/* <h2 key={task.id}>{task.text}</h2> */}
         </>
     )
 }
