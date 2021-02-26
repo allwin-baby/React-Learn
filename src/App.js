@@ -38,7 +38,7 @@ const deleteTask = (id)=>{
       <Header prop="TaskManager"/> <br/>  
       {/* if else in JSX */}
 
-      {tasks.legth>0?  /* if part */
+      {tasks.length>0?  /* if part */
        <Tasks  tasks={tasks} onDelete={deleteTask}/>   
        :"No Tasks To Show"}  {/* else part */}
      
